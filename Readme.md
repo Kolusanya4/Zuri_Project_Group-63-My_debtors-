@@ -14,8 +14,7 @@ Following is the list of site producer and production requirement used:
 
 
 
-## figma link:
- https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1
+Click to view [figma link] (https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1)
 ## link to design sketch
 
 
