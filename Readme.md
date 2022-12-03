@@ -29,7 +29,7 @@ This project was created with ![Visual Studio Code](https://img.shields.io/badge
         ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
-## Features 🔥
+## Features
 __Unauthenticated users__ - A user that is yet to be registered on our platform
  * The landing page (i.e. the website home page) consists of the following: <br/>
        - The Hero page with a CTA to either “Sign Up” or “Login”, Circulars, FAQs, Contact Us.<br/>
