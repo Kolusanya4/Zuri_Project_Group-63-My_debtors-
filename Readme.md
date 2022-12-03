@@ -16,7 +16,7 @@ Click to view [documentation] ().
 
 Click to view [figma link] (https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1)
 
-Click to view [design sketch] (https://docs.google.com/document/d/1LX1ubdzYqac9mBkQ25gfeM8dE1-qz43Qic7p5-zKN_s/edit?usp=sharing).
+Click to view [design sketch] ().
 
 
 Click to view [data schema] (https://docs.google.com/document/d/10xd0uvImfHDSHPQEne1p8r8RpNKLyAzJZpXT4Gh5dp4/edit?usp=sharing).
