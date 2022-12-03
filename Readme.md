@@ -2,18 +2,122 @@
  This is repository for Zuri_Project_Group-63-My_debtors in Zuri Team INC|I4G cohort II. We are  currently enjoying learning web technologies and we are simultaneously practicing our skills.
 
 ## My_debtors
- Project done during **Zuri Team INC|I4G x Zuri Project Phase | 23-11-22**. It aims to build a platform that allows schools in a certain locality list directory of people owing them and also to help them avoid going to other schools.
+ Project done during **Zuri Team INC|I4G x Zuri Project Phase | 23-11-22**. It aims to build a platform that allows schools in a certain locality list directory of people owing them and also to help them avoid going to other schools. 
 
-Following is the list of site producer and production requirement used:
- * product designer
- * frontend developer: html, css, javaScript.
- * backend developer: python, django.
- * full-stack developer
+## Technologies Used ✨
+This project was created with ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) and the following technologies were used: <br/>
+* __Design__<br/>
+        ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
-Click to view [documentation] ().
+* __Frontend__<br/>
+      ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+      ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+      ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+* __Backend__<br/>
+        ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+        ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+
+* __API__<br/>
+        ![Django REST framework](https://img.shields.io/badge/djangorestframework%20-%23000.svg?&style=for-the-badge&logo=djangorestframework&logoColor=white/)
+
+* __Database__<br/>
+        ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?&style=for-the-badge&logo=postgresql&logoColor=white)
 
 
+* __Project Management and Version Control__<br/>
+        ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
+
+## Features 🔥
+__Unauthenticated users__ - A user that is yet to be registered on our platform
+ * The landing page (i.e. the website home page) consists of the following: <br/>
+       - The Hero page with a CTA to either “Sign Up” or “Login”, Circulars, FAQs, Contact Us.<br/>
+       - Why the platform is beneficial.<br/>
+       - Reviews from other proprietor/proprietress.<br/>
+       - Newsletter section.<br/>
+       - Footer Section.
+       
+__Authenticated Users__ - A user that has been registered on our platform either as a school or as a student.
+ * Registered as a school: <br/>
+ Upon registration and verification of the school using her CAC number. The school would be able to do the following:
+    - Log in to the website <br/>
+    - Update debtors record (i.e. add/remove debtors from her schools debtors list) <br/>
+    - School’s Dashboard <br/>
+    - Full access to Data <br/>
+    - Search for debtors record <br/>
+    - Comment on posts <br/>
+    - Change password <br/>
+    - Help & support <br/>
+    - Log out
+ * Registered as a student: <br/>
+ Upon registration and verification of the student using his/her NIN. The student would be able to do the following:
+    - Log in to the website using his/her NIN and password <br/>
+    - Access to only his/her profile <br/>
+    - Contend his/her debt <br/>
+    - Log out 
+
+
+## Product Specialization
+* Mobile Phones: android, ios
+* Tablets
+* Laptops: windows
+ 
+### Getting Started
+Setting up project locally is a pretty easy step.
+
+1. Clone the repo
+  ```sh
+  git clone https://github.com/zuri-training/My_debtors_Team35.git
+  ```
+2. Move into the project directory
+  ```
+  cd My_debtors_Team35
+  ```
+3. Create a virtual environment
+  ```
+  python -m virtualenv venv 
+  ```
+4. Activate the virtual environment
+  ```
+  venv\Scripts\activate
+  ```
+5. Move into the Backend Directory
+  ```
+  cd Backend
+  ```
+6. Install pip dependencies
+  ```
+  pip install -r requirements.txt
+  ```
+<br/>
+Create a new Postgres Database Using pgAdmin or psql on terminal
+
+Default user: `postgres` 
+
+Set the database name to `studebt_db1`
+
+Create a .env file inside the Backend directory and store `SECRET_KEY=''` and your postgres password `DB_PASSWORD=''` <br/>
+7. Move into the studebt directory
+   ```
+   cd studebt
+   ```
+8. Make Migrations
+  ```
+  py manage.py makemigrations
+  ```
+9. Migrate to Postres Database
+  ```
+  py manage.py migrate
+  ```
+10. Create a superuser
+   ```
+   py manage.py createsuperuser
+   ```
+11. Run Server
+   ```
+   py manage.py runserver
+   ```
 Click to view [figma link] (https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1)
 
 Click to view [design sketch] ().
@@ -25,3 +129,4 @@ Click to view [data schema] (https://docs.google.com/document/d/10xd0uvImfHDSHPQ
 Click to view [mood boards] ().
 
 
+ 
