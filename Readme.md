@@ -32,60 +32,7 @@ This project was created with ![Visual Studio Code](https://img.shields.io/badge
 * Tablets
 * Laptops: windows
  
-### Getting Started
-Setting up project locally is a pretty easy step.
 
-1. Clone the repo
-  ```sh
-  git clone https://github.com/zuri-training/My_debtors_Team35.git
-  ```
-2. Move into the project directory
-  ```
-  cd My_debtors_Team35
-  ```
-3. Create a virtual environment
-  ```
-  python -m virtualenv venv 
-  ```
-4. Activate the virtual environment
-  ```
-  venv\Scripts\activate
-  ```
-5. Move into the Backend Directory
-  ```
-  cd Backend
-  ```
-6. Install pip dependencies
-  ```
-  pip install -r requirements.txt
-  ```
-<br/>
-Create a new Postgres Database Using pgAdmin or psql on terminal
-
-Default user: `postgres` 
-
-Set the database name to `studebt_db1`
-
-Create a .env file inside the Backend directory and store `SECRET_KEY=''` and your postgres password `DB_PASSWORD=''` <br/>
-7. Move into the studebt directory
-   ```
-   cd studebt
-   ```
-8. Make Migrations
-  ```
-  py manage.py makemigrations
-  ```
-9. Migrate to Postres Database
-  ```
-  py manage.py migrate
-  ```
-10. Create a superuser
-   ```
-   py manage.py createsuperuser
-   ```
-11. Run Server
-   ```
-   py manage.py runserver
    ```
 Click to view [figma link] (https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1)
 
