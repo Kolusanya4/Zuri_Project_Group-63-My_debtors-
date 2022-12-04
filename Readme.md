@@ -40,11 +40,11 @@ Click ti view [documentation] (https://docs.google.com/document/d/19iF9N5UHutBHz
 
 Click to view [figma link] (https://www.figma.com/file/E3eLWbnAIO9x7js7Iczv20/Zuri-Project-by-Team-63(Dovepp)_My_Debtors?node-id=0%3A1&t=iGezy0BCzkhOOxJb-1)
 
-Click to view [design sketch] ().
+Click to view [design sketch] (https://www.figma.com/file/dEpZ8o8xm6Gb60WFO8sQTy/My-Debtors-Project-(Team-Dovepp)-Team-63?node-id=0%3A1&t=cM1UyR6pTv7FnhiY-1).
 
 Click to view [data schema] (https://docs.google.com/document/d/10xd0uvImfHDSHPQEne1p8r8RpNKLyAzJZpXT4Gh5dp4/edit?usp=sharing).
 
-Click to view [mood boards] ().
+Click to view [mood boards] (https://www.figma.com/file/dEpZ8o8xm6Gb60WFO8sQTy/My-Debtors-Project-(Team-Dovepp)-Team-63?node-id=35%3A2918&t=cM1UyR6pTv7FnhiY-1).
 
 
  
