@@ -86,6 +86,7 @@ nav .hamburger {
   nav ul,
   nav .buttons {
     display: none;
+    padding-top: 2rem;
   }
 
   nav .hamburger {
@@ -95,6 +96,7 @@ nav .hamburger {
     height: 1rem;
     border: none;
     cursor: pointer;
+    background: transparent;
   }
 
   nav .hamburger .top,
@@ -119,6 +121,10 @@ nav .hamburger {
     top: 12px;
   }
 
+  nav .close {
+    display: none;
+  }
+
   nav .close .top {
     transform: rotate(45deg);
     top: 7px;
@@ -139,24 +145,26 @@ nav .hamburger {
     row-gap: 2.5rem;
     position: fixed;
     width: 100%;
-    background: white;
-    right: 0;
-    top: 3.7rem;
+    background: #272727;
+    left: 0;
+    /* top: 3.7rem; */
     height: 100%;
+    transition: all 0.3s ease-in-out;
   }
 
   nav ul li a {
     font-weight: 700;
     font-size: 1.2rem;
+    color: white;
   }
 
   nav .buttons {
-    /* flex-direction: column; */
     width: 100%;
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 60%; */
+    /* transform: translateY(-50%); */
+    transition: all 0.3s ease-in-out;
     text-align: center;
   }
 }
