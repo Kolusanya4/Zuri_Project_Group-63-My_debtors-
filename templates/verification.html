@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    {% if messages%}
-    <p>{{messages}}</p>
+    {% if messages %} {% for message in messages %}
+    <p {% if message.tags %} class="messages {{ message.tags }}" {% endif %}>
+      {{ message }}
+    </p>{%endfor%}
     {%endif%}
 
     <form action="" method="post">

@@ -10,8 +10,8 @@
     <div class="form-container">
         <form action="" method="POST">
             {%csrf_token%}
-            {{form.as_p}}
             {{schoolform.as_p}}
+            {{form.as_p}}
             <button type="submit">Register</button>
         </form>
     </div>
