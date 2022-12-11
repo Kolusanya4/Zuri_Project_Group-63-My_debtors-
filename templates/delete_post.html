@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Post</title>
+</head>
+<body>
+    <h1>Delete Post...</h1>
+    <br/>
+    <h3>Delete: {{ post.debtors_name}}</h3>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <strong>Are you sure?</strong><br/>
+            <button>Delete Post</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Debt Post View</h1>
+    {% for post in object_list %}
+    <li><a href="{% url 'post-detail' post.pk %}"> {{ post.school_owner }}</a> - {{ post.debtors_name }}
+        <b>{{ post.debt_amount }}</b><br /><small><a
+                href="{% url 'update_post' post.pk %}">Edit</a></small><br /><small><a
+                href="{% url 'delete_post' post.pk %}">Delete Post</a></small>
+    </li>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>{{ post.school_owner }}</h1>
+    <small>Debtor: {{ post.debtors_name }} <br />
+        Debt Amount: {{ post.debt_amount }} <br />
+        Amount paid: {{ post.debt_paid_amt }}<br />
+        Debt Status: {{ post.post_status }}</small>
+    <hr>
+    <h2>Comments...</h2>
+    {% if not post.comments.all %}
+        No Comments Yet...<a href="{% url 'add_comment' post.pk %}">Add One</a>
+
+    {% else %}
+    <button><a href="{% url 'add_comment' post.pk %}">Add Comment</a></button>
+    <br/><br/>
+        {% for comment in post.comments.all %}
+            <strong>
+                {{ comment.name }} - {{ comment.date_added }}
+            </strong>
+            <br/>
+            {{ comment.body }}
+            <br/>
+        {% endfor %}
+        <hr>
+        <button><a href="{% url 'add_comment' post.pk %}">Add Comment</a></button>
+    {% endif %}
+    
+    <button><a href="{% url 'update_post' post.pk %}">Edit</a></button>
+    <button><a href="{% url 'delete_post' post.pk %}">Delete Post</a></button>
+</body>
+
+</html>

@@ -1,9 +1,15 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
-from .forms import CreateUserForm,SchoolForms
+from .forms import CreateUserForm,SchoolForms, CommentForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
+
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .models import *
+from django.urls import reverse_lazy
+
+
 
 # Create your views here.
 def Register(request):
@@ -55,4 +61,47 @@ def Login(request):
         else:
             messages.error(request,'Wrong login credentials')
     return render(request,'login.html')
+
+
+# list all the post from database
+class PostView(ListView):
+    model = Post
+    posts = Post.objects.all()
+    template_name = 'post.html'
+
+#list a single post
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'postdetail.html'
+
+#create a post view
+class CreatePost(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = '__all__'
+
+#update a post
+class UpdatePost(UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ['debt_amount', 'debt_paid_amt', 'post_status']
+
+class DeletePost(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('post')
+
+
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'add_comment.html'
+    #fields = '__all__'
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+    success_url = reverse_lazy('post')
+
+
 
