@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <script defer src="../static/scripts/dashboard.js"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Open menu button -->
+    <button class="hamburger open" id="hamburger_openMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <!-- Close menu button -->
+    <button class="hamburger close" id="hamburger_closeMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <div class="dashboard-container">
+      <!-- SIDE NAVBAR -->
+      <div class="side-navbar" id="sideNavbar">
+        <div class="logo">
+          <img src="../static/images/Frame 9.png" alt="my debtors logo" />
+        </div>
+        <ul class="navlink" id="navlinks">
+          <li class="active">
+            <img
+              src="../static/images/Vector(2).png"
+              alt="dashboard"
+              class="dashboard-logo" />
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <img src="../static/images/Icon.svg" alt="feed" />
+            <a href="#">Feed</a>
+          </li>
+          <li>
+            <img src="../static/images/Vector(1).png" alt="settings" />
+            <a href="#">Settings</a>
+          </li>
+        </ul>
+        <div class="logout">
+          <img src="../static/images/ic_sharp-log-out.svg" alt="logout" />
+          <a>Log Out</a>
+        </div>
+      </div>
+      <!-- DASHBOARD VIEW -->
+      <div class="dashboard-view">
+        <div class="dashboard-view_top">
+          <!-- WELCOME SECTION (LEFT) -->
+          <div class="welcome-section">
+            <p>Welcome!!</p>
+            <h3>Gracewell Academy.</h3>
+            <div class="filter">
+              <p>filter by</p>
+              <select name="filter" id="filter">
+                <option value="All students">All students</option>
+                <option value="student1">Student1</option>
+                <option value="student2">Student2</option>
+                <option value="student3">Student3</option>
+                <option value="student4">Student4</option>
+              </select>
+            </div>
+          </div>
+          <!-- SEARCH SECTION (MIDDLE) -->
+          <div class="search-section">
+            <img src="../static/images/MagnifyingGlass.png" alt="search icon" />
+            <input type="text" placeholder="Search schools" />
+          </div>
+          <!-- PROFILE SECTION -->
+          <div class="profile-section">
+            <div class="profile-icons">
+              <img src="../static/images/Frame 4.png" alt="message icon" />
+              <img src="../static/images/Frame 5.png" alt="notification icon" />
+              <img src="../static/images/Ellipse 3.png" alt="profile picture" />
+            </div>
+            <a href="#" class="add-student">Add Student</a>
+            <div class="calender">
+              <img src="../static/images/Calendar.png" alt="calender icon" />
+              <p>June, 2022</p>
+            </div>
+          </div>
+        </div>
+        <!-- TABLE SECTION -->
+        <table>
+          <tr>
+            <th>S/N</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>STUDENT ID</th>
+            <th>DEBT</th>
+            <th>AMOUNT PAID</th>
+            <th>STATUS</th>
+            <th>EDIT</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td>Angelina Jons</td>
+            <td>angelinajons05@gmail.com</td>
+            <td>GWA2468010</td>
+            <td>#30,000</td>
+            <td>#30,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td>Lucy Ben</td>
+            <td>lucyben@gmail.com</td>
+            <td>GWA2468006</td>
+            <td>#30,000</td>
+            <td>#20,000</td>
+            <td class="pending">Pending</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td>Peter Jackson</td>
+            <td>peterjackson5@gmail.com</td>
+            <td>GWA2468025</td>
+            <td>#30,000</td>
+            <td>#20,000</td>
+            <td class="pending">Pending</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Jack William</td>
+            <td>jackwilliam@gmail.com</td>
+            <td>GWA2468229</td>
+            <td>#30,000</td>
+            <td>#0</td>
+            <td class="active">Active</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td>Jane Darlington</td>
+            <td>janedarlington@gmail.com</td>
+            <td>GWA2468080</td>
+            <td>#30,000</td>
+            <td>#30,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>6.</td>
+            <td>Kessy William</td>
+            <td>kessywilliam70@gmail.com</td>
+            <td>GWA2468097</td>
+            <td>#5,000</td>
+            <td>#5,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>7.</td>
+            <td>Dominic Junior</td>
+            <td>dominicjunior@gmail.com</td>
+            <td>GWA2468039</td>
+            <td>#30,000</td>
+            <td>#0</td>
+            <td class="active">Active</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>8.</td>
+            <td>Harry Ikechuckwu</td>
+            <td>harryikechuckwu@gmail.com</td>
+            <td>GWA2468033</td>
+            <td>#10,000</td>
+            <td>#10,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>9.</td>
+            <td>Emily Stephans</td>
+            <td>emilystephans3@gmail.com</td>
+            <td>GWA2468007</td>
+            <td>#30,000</td>
+            <td>#0</td>
+            <td class="active">Active</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>10.</td>
+            <td>Chuckwu Mary</td>
+            <td>chuckwumary@gmail.com</td>
+            <td>GWA2468024</td>
+            <td>#20,000</td>
+            <td>#0</td>
+            <td class="active">Active</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+          <tr>
+            <td>11.</td>
+            <td>Ali Peter</td>
+            <td>alipeter45@gmail.com</td>
+            <td>GWA2468002</td>
+            <td>#30,000</td>
+            <td>#30,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
