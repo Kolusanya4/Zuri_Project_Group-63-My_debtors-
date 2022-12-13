@@ -1,19 +1,54 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/register.css'%}" />
     <title>Document</title>
-</head>
-<body>
-    <div class="form-container">
-        <form action="" method="POST">
-            {%csrf_token%}
-            {{schoolform.as_p}}
-            {{form.as_p}}
-            <button type="submit">Register</button>
-        </form>
+  </head>
+  <body>
+    <div class="container">
+      <div class="design-bar">
+        <p>Select Account Type</p>
+        <button class="owner-btn">School Owner</button>
+        <button class="debtor-btn">Debtor</button>
+      </div>
+      <div class="form-bar">
+        <div class="form-cont">
+            <p style="text-align: center;"><img src="{% static 'images/Frame 9.png'%}" alt="" height="50px"></p>
+            <h3>Create school-owner account</h3>
+          {% if messages %} {% for message in messages %}
+          <p
+            {%
+            if
+            message.tags
+            %}
+            class="messages {{ message.tags }}"
+            {%
+            endif
+            %}
+          >
+            {{ message }}
+          </p>
+          {%endfor %} {%endif%}
+          <div class="form-container">
+            <form action="" method="POST" class="form school-form">
+              {%csrf_token%} {{schoolform.as_p}} {{form.as_p}}
+              <p id="terms-cond">I Agree to the <a href="#" >Terms and Conditions</a></p>
+              <button type="submit">Register</button>
+            </form>
+            <form action="" method="post" class="debtor-form">
+                {%csrf_token%} {{debtorform.as_p}} {{form.as_p}}
+                <p id="terms-cond">I Agree to the <a href="#" >Terms and Conditions</a></p>
+                <button type="submit">Register</button>
+            </form>
+            <p id="terms-cond">Already Have an Account? <a href="{%url 'login'%}" >Login</a></p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
+  <script src="{% static 'scripts/register.js'%}"></script>
 </html>

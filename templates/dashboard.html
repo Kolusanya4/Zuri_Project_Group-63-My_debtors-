@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
+    <script defer src="../static/scripts/dashboard.js"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- Open menu button -->
+    <button class="hamburger open" id="hamburger_openMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <!-- Close menu button -->
+    <button class="hamburger close" id="hamburger_closeMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <div class="dashboard-container">
+      <!-- SIDE NAVBAR -->
+      <div class="side-navbar" id="sideNavbar">
+        <div class="logo">
+          <img src="../static/images/Frame 9.png" alt="my debtors logo" />
+        </div>
+        <ul class="navlink" id="navlinks">
+          <li class="active">
+            <img
+              src="../static/images/Vector(2).png"
+              alt="dashboard"
+              class="dashboard-logo" />
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <img src="../static/images/Icon.svg" alt="feed" />
+            <a href="{%url 'post'%}">Feed</a>
+          </li>
+          <li>
+            <img src="../static/images/Vector(1).png" alt="settings" />
+            <a href="#">Settings</a>
+          </li>
+        </ul>
+        <div class="logout">
+          <img src="../static/images/ic_sharp-log-out.svg" alt="logout" />
+          <a href="{%url 'logout'%}">Log Out</a>
+        </div>
+      </div>
+      <!-- DASHBOARD VIEW -->
+      <div class="dashboard-view">
+        <div class="dashboard-view_top">
+          <!-- WELCOME SECTION (LEFT) -->
+          <div class="welcome-section">
+            <p>Welcome!!</p>
+            <h3>{{school.schoolname}}.</h3>
+            <div class="filter">
+              <p>filter by</p>
+              <select name="filter" id="filter">
+                <option value="All students">All students</option>
+                <option value="student1">Student1</option>
+                <option value="student2">Student2</option>
+                <option value="student3">Student3</option>
+                <option value="student4">Student4</option>
+              </select>
+            </div>
+          </div>
+          <!-- SEARCH SECTION (MIDDLE) -->
+          <div class="search-section">
+            <img src="../static/images/MagnifyingGlass.png" alt="search icon" />
+            <input type="text" placeholder="Search schools" />
+          </div>
+          <!-- PROFILE SECTION -->
+          <div class="profile-section">
+            <div class="profile-icons">
+              <img src="../static/images/Frame 4.png" alt="message icon" />
+              <img src="../static/images/Frame 5.png" alt="notification icon" />
+              <img src="../static/images/Ellipse 3.png" alt="profile picture" />
+            </div>
+            <a href="#" class="add-student">Add Student</a>
+            <div class="calender">
+              <img src="../static/images/Calendar.png" alt="calender icon" />
+              <p>June, 2022</p>
+            </div>
+          </div>
+        </div>
+        <!-- TABLE SECTION -->
+        <table>
+          <tr>
+            <th>S/N</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>STUDENT ID</th>
+            <th>DEBT</th>
+            <th>AMOUNT PAID</th>
+            <th>STATUS</th>
+            <th>EDIT</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td>Angelina Jons</td>
+            <td>angelinajons05@gmail.com</td>
+            <td>GWA2468010</td>
+            <td>#30,000</td>
+            <td>#30,000</td>
+            <td class="paid">Paid</td>
+            <td>
+              <img
+                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                alt="edit icon" />
+            </td>
+          </tr>
+         
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

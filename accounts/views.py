@@ -1,27 +1,46 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
-from .forms import CreateUserForm,SchoolForms
+from .forms import CreateUserForm,SchoolForms,DebtorForms,DebtorInfoForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
+from .models import DebtInfo,School,Debtor
+from django.contrib.auth.models import Group
+from .decorators import allowed_user
 
 # Create your views here.
 def Register(request):
     if request.method=='POST':
         form=CreateUserForm(data=request.POST)
         profile=SchoolForms(data=request.POST)
+        debtor=DebtorForms(data=request.POST)
         if form.is_valid() and profile.is_valid():
             user=form.save()
             user.set_password(form.cleaned_data['password'])
             user.is_active=False
+            school_group=Group.objects.get(name='Schoolowners')
+            user.groups.add(school_group)
             user.save()
             user_profile=profile.save(commit=False)
             user_profile.user=user
             user_profile.save()
             return redirect('verify')
+        elif form.is_valid() and debtor.is_valid():
+            user=form.save()
+            user.set_password(form.cleaned_data['password'])
+            user.is_active=False
+            debtor_group=Group.objects.get(name='Debtors')
+            user.groups.add(debtor_group)
+            user.save()
+            debt_profile=debtor.save(commit=False)
+            debt_profile.user=user
+            debt_profile.save()
+            return redirect('verify')
     form=CreateUserForm()
     profile=SchoolForms()
-    return render(request,'register.html',{'form':form,'schoolform':profile})
+    debtor=DebtorForms()
+    return render(request,'register.html',{'form':form,'schoolform':profile,'debtorform':debtor})
 
 def VerifyEmail(request):
     if request.method=='POST':
@@ -45,14 +64,48 @@ def VerifyEmail(request):
 
 
 def Login(request):
-    if request.method=='POST':
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    elif request.method=='POST':
         uname=request.POST.get('username')
         pw=request.POST.get('password')
         user=authenticate(username=uname,password=pw)
         if user is not None:
             login(request,user)
-            return redirect('app:home')
+            return redirect('dashboard')
         else:
             messages.error(request,'Wrong login credentials')
     return render(request,'login.html')
+
+@login_required(login_url='login')
+def DashBoard(request):
+    if request.user.groups.filter(name='Schoolowners').exists():
+        school_owner=School.objects.filter(user=request.user)[0]
+        debt_info=DebtInfo.objects.filter(Author=school_owner)
+        
+        return render(request,'dashboard.html',{'info':debt_info,'school':school_owner})
+    elif request.user.groups.filter(name='Debtors').exists():
+        debtor=Debtor.objects.filter(user=request.user)
+        return redirect('post')
+
+@login_required(login_url='login')
+def CreatePost(request):    
+        debtpost=DebtInfo.objects.all()
+        check_create=request.user.groups.filter(name='Schoolowners').exists()
+        print('yes')
+        if request.method=='POST':
+            form=DebtorInfoForm(data=request.POST)
+            if form.is_valid():
+                instance=form.save(commit=False)
+                instance.Author=request.user
+                instance.save()
+                return redirect('dashboard')
+        else:
+            form=DebtorInfoForm()
+            return render(request,'post.html',{'form':form,'check':check_create,'debts':debtpost})
+@login_required(login_url='login')
+def Logout(request):
+    logout(request)
+    messages.success(request,'Logout Successful')
+    return redirect('login')
 

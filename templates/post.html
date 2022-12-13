@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello {{request.user}}</p>
+    {%if check%}
+    <h2>Create Post</h2>
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Create Post</button>
+    </form>
+    {%endif%}
+</body>
+<a href="{% url 'logout'%}">Logout</a>
+<p>These are the availble posts</p>
+{%for debt in debts%}
+{{debt.content}}
+<button>Contend</button>
+<button>Comment</button>
+{%endfor%}
+</html>

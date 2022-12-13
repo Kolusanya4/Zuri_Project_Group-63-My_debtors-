@@ -10,11 +10,12 @@
   </head>
   <body>
     <div class="form-container">
+      {%csrf_token%}
       {% if messages %} {% for message in messages %}
       <p {% if message.tags %} class="messages {{ message.tags }}" {% endif %}>
         {{ message }}
       </p>
-      {% endfor %} {% endif %} {{messages.success}}
+      {% endfor %} {% endif %}
       <form action="" method="POST">
         {%csrf_token%}
         <label for="">Username</label>

@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import SchoolOwner
+from .models import School,Debtor,DebtInfo
 # Register your models here.
-admin.site.register(SchoolOwner)
+admin.site.register(School)
+admin.site.register(Debtor)
+admin.site.register(DebtInfo)
