@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
-from .forms import CreateUserForm,SchoolForms, CommentForm
+from .forms import CreateUserForm,SchoolForms, CommentForm, ContendForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
-
+from .forms import *
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import *
 from django.urls import reverse_lazy
@@ -62,6 +62,21 @@ def Login(request):
             messages.error(request,'Wrong login credentials')
     return render(request,'login.html')
 
+def ContendView(request):
+
+    form = ContendForm()
+    if request.method == 'POST':
+        print(request.POST)
+        form = ContendForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form':form}
+    return render(request, 'contend.html', context)
+
+def ContendSuccess(request):
+    return render(request, 'contend_success.html')
+
 
 # list all the post from database
 class PostView(ListView):
@@ -104,4 +119,7 @@ class AddCommentView(CreateView):
     success_url = reverse_lazy('post')
 
 
+
+
+    
 

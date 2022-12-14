@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+import email
 
 # Create your models here.
 class SchoolOwner(models.Model):
@@ -41,6 +42,17 @@ class Comment(models.Model):
     name = models.CharField(max_length=100)
     body = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Contend(models.Model):
+    post = models.OneToOneField(Post, max_length=100, on_delete = models.CASCADE )
+    name = models.CharField(max_length = 100)
+    email = models.EmailField(default='abc@gmail.com')
+    text = models.TextField(max_length=10000)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

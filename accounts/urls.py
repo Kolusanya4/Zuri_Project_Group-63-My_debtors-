@@ -1,10 +1,12 @@
 from django.urls import path
-from .views import Register,VerifyEmail,Login, PostView, PostDetailView, CreatePost, UpdatePost, DeletePost, AddCommentView
+from .views import Register,VerifyEmail,Login, PostView, PostDetailView, CreatePost, UpdatePost, DeletePost, AddCommentView, ContendView, ContendSuccess
 
 urlpatterns=[
     path('register/',Register,name='register'),
     path('login/',Login,name='login'),
     path('verify-email/',VerifyEmail,name='verify'),
+    path('contend/',ContendView,name='contend'),
+    path('contend_success/', ContendSuccess, name='contend_success'),
     path('post/', PostView.as_view(), name='post'),
     path('postdetail/<int:pk>', PostDetailView.as_view(), name='post-detail'),
     path('create_post/', CreatePost.as_view(), name='create_post'),
