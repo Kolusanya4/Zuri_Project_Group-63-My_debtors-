@@ -28,3 +28,4 @@ class ContendForm(ModelForm):
     class Meta:
         model = Contend
         fields = ('name', 'email', 'text')
+        
