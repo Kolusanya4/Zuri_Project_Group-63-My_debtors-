@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 14px;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  margin: 2rem auto 2rem 2rem;
+  border: none;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #272727;
+}
+
+.modal {
+  position: relative;
+  padding: 2.5rem 1rem;
+  max-width: 60ch;
+  min-height: 40ch;
+  margin: auto;
+  border: none;
+  box-shadow: 4px 8px 6px rgba(0 0 0 / 0.15), -6px -2px 6px rgba(0 0 0 / 0.15),
+    6px -2px 6px rgba(0 0 0 / 0.15), -4px 8px 6px rgba(0 0 0 / 0.15);
+  border-radius: 10px;
+}
+
+.modal::backdrop {
+  background: rgba(0 0 0 / 0.07);
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.close:focus {
+  outline: none;
+}
+
+.close .top,
+.close .bottom {
+  position: absolute;
+  width: 80%;
+  height: 3px;
+  left: 0;
+  top: 2px;
+  border-radius: 2px;
+  background-color: black;
+}
+
+.close .top {
+  transform: rotate(45deg);
+  top: 7px;
+}
+
+.close .bottom {
+  transform: rotate(-45deg);
+  top: 7px;
+}
+
+.close-button {
+  margin-top: 0;
+  margin-left: 0;
+}
