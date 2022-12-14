@@ -1,0 +1,54 @@
+body{
+    box-sizing: border-box;
+    margin: 80px 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.debtors{
+    font-family:'PT Sans';
+}
+.logo-cont{
+    display: flex;
+    justify-content:flex-start;
+    padding-left: 180px;
+}
+p{
+    text-align:center;
+    margin: 16px auto; 
+}
+h1{
+    text-align:center;
+    margin: 25px auto 16px auto; 
+}
+fieldset{
+    border: none; 
+}
+label{
+    display: block;
+    margin:20px 0;
+}
+input{
+    display: block;
+    margin: 10px 0;
+    width: 450px;
+    height: 75px; 
+    border:1px solid rgb(109, 109, 171);
+    border-radius: 2%; 
+    /* color: white !important; */
+    text-align: center;
+    font-size:x-large;
+    
+}
+input:hover{
+    background-color: #1B264F ;
+
+}
+form{
+    margin: 0 auto;
+    padding-bottom: 20px;
+    max-width:500px;
+    min-width:300px;
+}
+a{
+    text-decoration: none;
+}

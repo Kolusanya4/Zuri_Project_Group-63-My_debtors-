@@ -54,8 +54,8 @@ def Login(request):
     if request.method=='POST':
         uname=request.POST.get('username')
         pw=request.POST.get('password')
-        user=authenticate(request,username=uname,password=pw)
-        if user:
+        user=authenticate(username=uname,password=pw)
+        if user is not None:
             login(request,user)
             return redirect('app:home')
         else:

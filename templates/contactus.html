@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/contactus.css' %}" />
+    <script defer src="{%static 'scripts/navbar.js' %}"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../static/images/Frame 9.png" alt="navbar logo" />
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="buttons" id="btn">
+        <a href="{% url 'register'%}" class="buttons-signup">Sign Up</a>
+        <a href="#login" class="buttons-login">Log In</a>
+      </div>
+      <!-- Open menu button -->
+      <button class="hamburger open" id="hamburger_openMenu">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="down"></span>
+      </button>
+      <!-- Close menu button -->
+      <button class="hamburger close" id="hamburger_closeMenu">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="down"></span>
+      </button>
+    </nav>
+    {%block content%} {%endblock content%}
+
+    <div class="container">
+      <div class="form_section">
+        <div class="header_parag">
+          <h1>CONTACT US</h1>
+          <p>
+            In need of more information about services or complaints, please
+            send us feedbacks.
+          </p>
+        </div>
+        <form>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email" />
+          <label for="message">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="70"
+            rows="50"
+            placeholder="Your message"></textarea>
+          <button>Send</button>
+        </form>
+      </div>
+      <div class="image">
+        <img src="{%static 'images/image 2.png' %}" />
+      </div>
+    </div>
+
+    <footer>
+      <div class="enquiries">
+        <img src="{%static 'images/phone-call.png' %}" class="icon" />
+        <p>For enquiries, please call +2348057668429</p>
+      </div>
+      <div class="socials">
+        <a href="#"
+          ><img src="{%static 'images/mail.svg' %}" alt="mail" class="icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="{%static 'images/facebook.svg' %}"
+            alt="facebook"
+            class="icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="{%static 'images/Vector.svg' %}"
+            alt="twitter"
+            class="icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="{%static 'images/linkedin.svg' %}"
+            alt="linkedin"
+            class="icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="{%static 'images/instagram.png' %}"
+            alt="instagram"
+            class="icon"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
