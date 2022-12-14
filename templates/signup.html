@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overall-cont">
+        <div class="logo-cont">
+            <div class="img-cont">
+                <img src="/debtors-images/Logo_object_frame.png" alt="logo">
+            </div>
+            <div class="debtors">
+                <h1>My Debtors</h1>
+            </div>
+        </div> 
+        <p class="account"><strong>Create an Account</strong></p>
+        <form action="#">
+            <fieldset>
+                <label for="first">Full Name <input type="text" name="first-name" id="first" maxlength="20" minlength="3" placeholder="Full name goes here"
+                    required> </label>
+                <label for="mail">Email <input type="email" name="email" id="mail" placeholder="Email goes here" required></label>
+                <label for="password">Password <input type="password" name="password" pattern="[a-z0-5]{8}" id="password" placeholder="Choose password"
+                    title="must contain only 8 characters of lowercase and numbers" required></label>
+                <p class="terms">I Agree to Terms and Conditions stated above</p>
+                <input type="submit" value="Sign Up" class="sign" id="sign"></label>
+                <p>Already have an account? <a href="/login.html" class="login">Log in</a></p>
+            </fieldset>
+        </form>
+
+    </div>
+    
+</body>
+</html>
