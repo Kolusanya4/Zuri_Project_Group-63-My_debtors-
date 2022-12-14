@@ -20,12 +20,12 @@ import os
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-tn52%yd0i3ik3ka+!+flvl5feif!0)ah=tn)cs7b(hho#3xsap'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +122,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static/')
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR,'static/')
 ]
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,0 +1,1 @@
+web: gunicorn mydebtors.wsgi --log-file -
