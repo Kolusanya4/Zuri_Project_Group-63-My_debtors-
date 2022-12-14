@@ -11,6 +11,24 @@
     <title>Posts</title>
   </head>
   <body>
+    <div id="comment-modal">
+        <div class="comment-cont">
+            <a href="{%url 'post'%}"><img src="{%static 'images/cancel (4).png'%}" alt=""></a>
+        <h3>Comments</h3>
+            {%if comments is not None%}
+            {%for comment in comments%}
+          <div class="comment">
+            <h4>Author: {{comment.author}}</h4>
+            <span>{{comment.content}}</span>
+          </div>
+          {%endfor%}
+          {%endif%}
+          {%if not comments%}
+          <p>There are no comments</p>
+          {%endif%}
+        
+        </div>
+      </div>
     <!-- Open menu button -->
     <button class="hamburger open" id="hamburger_openMenu">
       <span class="top"></span>
@@ -70,7 +88,7 @@
                     <div class="school"><span><img src="{%static 'images/school.png'%}" alt=""></span> <p>{{debt.Author}}</p></div>
                     <span>{{debt.content}}</span>
                     <div class="buttons">
-                      <a href="{%url 'viewcom' debt.id%}"><button>View Comments</button></a>
+                        <a href="#"><button>View Comments</button></a>
                         {%if not check%}<a href="#"><button>Contend</button></a>{%endif%}
                         <a href="#"><button>View Details</button></a>
                         <a href="{% url 'delete' debt.id%}"><button>Delete</button></a>
@@ -89,6 +107,5 @@
         </div>
       </div>
       </div>
-     
         </body
   </html>

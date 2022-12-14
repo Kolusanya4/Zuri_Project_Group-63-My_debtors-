@@ -34,6 +34,7 @@ class Post(models.Model):
     Author=models.ForeignKey(School,on_delete=models.CASCADE,null=True)
     debtor_name=models.CharField(max_length=500)
     debt_amount=models.CharField(max_length=500)
+    amount_paid=models.CharField(max_length=500,blank=True)
     debt_status=models.CharField(max_length=200, choices=status,default='Active')
     content=models.TextField(blank=True)
     created=models.DateField(auto_now_add=True)
@@ -42,10 +43,10 @@ class Post(models.Model):
         ordering = ('created', )
     def __str__(self):
             return str(self.debtor_name)
-class Comment:
-    author=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
+class Comment(models.Model):
+    author=models.ForeignKey(User,null=True,on_delete=models.CASCADE)
     post=models.ForeignKey(Post,null=True,blank=True,on_delete=models.CASCADE)
     content=models.TextField(default='Add comment')
     date_created=models.DateField(auto_now_add=True)
     def __str__(self) -> str:
-         return self.author
+         return str(self.author)

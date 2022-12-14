@@ -1,43 +1,20 @@
+{%extends 'base.html'%}
 <!DOCTYPE html>
+{%load static%}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="../static/css/aboutus.css">
-    <link rel="stylesheet" href="../static/css/footer.css">
-    <link rel="stylesheet" href="../static/css/navbar.css" />
+    <link rel="stylesheet" href="{%static 'css/aboutus.css'%}">
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}">
+    <link rel="stylesheet" href="{%static 'css/nav.css'%}" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>    
 <body>
-    <nav>
-      <div class="logo">
-        <img src="../static/images/Frame 9.png" alt="navbar logo" />
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-      <div class="buttons" id="btn">
-        <a href="#signup" class="buttons-signup">Sign Up</a>
-        <a href="#login" class="buttons-login">Log In</a>
-      </div>
-      <!-- Open menu button -->
-      <button class="hamburger open" id="hamburger_openMenu">
-        <span class="top"></span>
-        <span class="middle"></span>
-        <span class="down"></span>
-      </button>
-      <!-- Close menu button -->
-      <button class="hamburger close" id="hamburger_closeMenu">
-        <span class="top"></span>
-        <span class="middle"></span>
-        <span class="down"></span>
-      </button>
-    </nav>
+  {%block content%}
     <section id="vision">
         <div class="header">
             <h2>About Us</h2>
@@ -63,15 +40,15 @@
             </div>
         </div>
         <div class="img">
-            <img src="../static/images/team1.png" alt="">
+            <img src="{%static 'images/team1.png'%}" alt="">
         </div>
     </section>
     <div id="line">
-       <img src="../static/images/Line3.png" alt="">
+       <img src="{%static 'images/Line3.png'%}" alt="">
     </div>
     <section id="approach">
         <div class="img">
-            <img src="../static/images/team2.png" alt="">
+            <img src="{%static 'images/team2.png'%}" alt="">
         </div>
         <div class="approach">
             <h2>Our Approach</h2>
@@ -85,7 +62,7 @@
        
     </section> 
     <div id="line">
-       <img src="../static/images/Line3.png" alt="">
+       <img src="{%static 'images/Line3.png'%}" alt="">
    </div>
     <section id="process">
         <div class="process">
@@ -100,7 +77,7 @@
                 Register today!</p>
         </div>
         <div class="img">
-            <img src="../static/images/team3.png" alt="">
+            <img src="{%static 'images/team3.png'%}" alt="">
         </div>
     </section>
     <section id="newsletter">
@@ -113,51 +90,4 @@
           <div><button type="submit">Sign Up</button></div>
         </div>
     </section>
-     <footer>
-      <div class="footer-logo_nav">
-        <div class="footer-logo">
-          <img src="..static/images/Group 5.png" alt="Logo footer" />
-        </div>
-
-        <div class="footer-nav">
-          <div class="footer-nav_navlinks">
-            <h3>Navigation</h3>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Profile</a>
-            <a href="#">Contact</a>
-          </div>
-          <div class="footer-nav_navlinks">
-            <h3>About Us</h3>
-            <a href="#">Our Story</a>
-            <a href="#">Designers</a>
-            <a href="#">Press</a>
-            <a href="#">Sustainability</a>
-          </div>
-          <div class="footer-nav_navlinks">
-            <h3>Support</h3>
-            <a href="#">FAQs</a>
-            <a href="#">Care gide</a>
-            <a href="#">Info</a>
-            <a href="#">Documentation</a>
-          </div>
-          <div class="footer-nav_navlinks">
-            <h3>Contact Us</h3>
-            <p>+12-234-386</p>
-            <p>+23-567-386</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <div class="footer-footer">
-      <p class="footer-copyright">&copy; 2022 All Rights Reserved</p>
-      <div class="privacy_terms_discl">
-        <a href="#">Privacy</a>
-        <a href="#" class="terms">Terms and Conditions</a>
-        <a href="#">Disclaimer</a>
-      </div>
-    </div>
-     <script defer src="../static//scripts/navbar.js"></script>
-
-</body>
-</html>
+    {%endblock%}

@@ -66,33 +66,32 @@
         </div>
         <!-- TABLE SECTION -->
         <div class="add-student">
-          <a href="#" class="add-student">Add Student</a>
+          <a href="{%url 'create-post'%}" class="add-student">Add Student</a>
         </div>
         <table>
           <tr>
             <th>S/N</th>
             <th>NAME</th>
-            <th>EMAIL</th>
-            <th>STUDENT ID</th>
             <th>DEBT</th>
             <th>AMOUNT PAID</th>
             <th>STATUS</th>
-            <th>EDIT</th>
+            <th>DELETE</th>
           </tr>
-          <tr>
-            <td>1.</td>
-            <td>Angelina Jons</td>
-            <td>angelinajons05@gmail.com</td>
-            <td>GWA2468010</td>
-            <td>#30,000</td>
-            <td>#30,000</td>
-            <td class="paid">Paid</td>
-            <td>
+          {%for info in infos%}
+          <td>1.</td>
+          <td>{{info.debtor_name}}</td>
+          <td>{{info.debt_amount}}</td>
+          <td>{{info.amount_paid}}</td>
+          <td class="paid">{{info.debt_status}}</td>
+          <td>
+            <a href="{%url 'delete' info.id%}">
               <img
-                src="{%static 'images/material-symbols_edit-calendar-outline.svg' %}"
-                alt="edit icon" />
-            </td>
-          </tr>
+              src="{%static 'images/delete (1).png' %}"
+              alt="edit icon" />
+            </a>
+          </td>
+        </tr>
+        {%endfor%}
          
         </table>
       </div>

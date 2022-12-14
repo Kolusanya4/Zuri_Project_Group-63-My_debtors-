@@ -25,4 +25,4 @@ class DebtorForms(forms.ModelForm):
 class DebtorInfoForm(forms.ModelForm):
     class Meta:
         model=Post
-        fields=('debtor_name','debt_amount','debt_status','content')
+        fields=('debtor_name','debt_amount','amount_paid','debt_status','content')

@@ -75,5 +75,42 @@
     align-self: flex-start;
     display: block;
 }
+#comment-modal{
+    position: fixed;
+    top: 0;
+    color: #274690;
+    height: 100vh;
+    z-index: 1;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.877);
+}
+#comment-modal .comment-cont{
+    width: 30%;
+    background-color: white;
+    margin: 100px auto;
+    padding: 30px;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#comment-modal .comment-cont a{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.comment-cont .comment{
+    width: 80%;
+    color: black;
+    box-shadow: 0 1px 2px rgb(212, 209, 209);
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.comment h4{
+    color: #274690;
+}
 
 

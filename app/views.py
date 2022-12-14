@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def Homepage(request):
-   return render(request,'base.html')
+   return render(request,'about.html')
 

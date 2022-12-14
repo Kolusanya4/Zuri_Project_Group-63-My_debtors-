@@ -15,7 +15,7 @@
       </div>
       <div class="form-bar">
         <div class="form-cont login">
-            <p style="text-align: center;"><img src="{% static 'images/Frame 9.png'%}" alt="" height="50px"></p>
+            <p style="text-align: center;"><a href="{%url 'app:home'%}"><img src="{% static 'images/Frame 9.png'%}" alt="" height="50px"></a></p>
             <h3>Login to access data</h3>
 
       <form action="" method="POST" class="form school-form">
@@ -37,7 +37,7 @@
           />
         </p>
         <button type="submit" style="cursor: pointer;">Login</button>
-
+        <p>Email not verified? <a href="{%url 'verify'%}">Verify</a></p>
 
           </div>
         </div>
