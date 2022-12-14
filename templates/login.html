@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="stylesheet" href="{% static 'css/register.css'%}" />
     <title>Document</title>
   </head>
   <body>
-    <div class="form-container">
-      {%csrf_token%}
-      {% if messages %} {% for message in messages %}
-      <p {% if message.tags %} class="messages {{ message.tags }}" {% endif %}>
-        {{ message }}
-      </p>
-      {% endfor %} {% endif %}
-      <form action="" method="POST">
+    <div class="container">
+      <div class="design-bar">
+
+      </div>
+      <div class="form-bar">
+        <div class="form-cont login">
+            <p style="text-align: center;"><img src="{% static 'images/Frame 9.png'%}" alt="" height="50px"></p>
+            <h3>Login to access data</h3>
+
+      <form action="" method="POST" class="form school-form">
         {%csrf_token%}
-        <label for="">Username</label>
-        <input type="text" placeholder="Input Username" name="username" />
-        <label for="">Password</label>
-        <input
-          type="password"
-          name="password"
-          id=""
-          placeholder="Input password"
-        />
-        <button type="submit">Login</button>
-      </form>
+        {% if messages %} {% for message in messages %}
+        <p {% if message.tags %} class="messages {{ message.tags }}" {% endif %}>
+          {{ message }}
+        </p>
+        {% endfor %} {% endif %}
+        <p>
+          <label for="">Username</label>
+          <input type="text" placeholder="Input Username" name="username" />
+          <label for="">Password</label>
+          <input
+            type="password"
+            name="password"
+            id=""
+            placeholder="Input password"
+          />
+        </p>
+        <button type="submit" style="cursor: pointer;">Login</button>
+
+
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

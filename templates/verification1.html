@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification 1</title>
+    <link rel="stylesheet" href="{%static 'css/verification.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-cont">
+        <div class="img-cont">
+            <img src="{%static 'images/Logo_object_frame.png'%}" alt="logo">
+        </div>
+        <div class="debtors">
+            <h1 class="debtors">My Debtors</h1>
+        </div>
+    </div> 
+    <h1>Add email for verification</h1>
+    <form action="" method="POST">
+        {% if messages %} {% for message in messages %}
+        <p {% if message.tags %} class="messages {{ message.tags }}" {% endif %}>
+          {{ message }}
+        </p>{%endfor%}
+        {%endif%}
+
+        <fieldset>
+            {%csrf_token%}
+            <label for="">Verify Email</label>
+            <input type="email" name="email" id="" placeholder="Input email">
+            <button type="submit">Verify Email</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>

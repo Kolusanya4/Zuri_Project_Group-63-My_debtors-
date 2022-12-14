@@ -26,27 +26,27 @@
       <!-- SIDE NAVBAR -->
       <div class="side-navbar" id="sideNavbar">
         <div class="logo">
-          <img src="../static/images/Frame 9.png" alt="my debtors logo" />
+          <img src="{% static 'images/Frame 9.png'%}" alt="my debtors logo" />
         </div>
         <ul class="navlink" id="navlinks">
           <li class="active">
             <img
-              src="../static/images/Vector(2).png"
+              src="{%static 'images/Vector(2).png'%}"
               alt="dashboard"
               class="dashboard-logo" />
-            <a href="#">Dashboard</a>
+            <a href="{%url 'dashboard'%}">Dashboard</a>
           </li>
           <li>
-            <img src="../static/images/Icon.svg" alt="feed" />
+            <img src="{%static 'images/Icon.svg'%}" alt="feed" />
             <a href="{%url 'post'%}">Feed</a>
           </li>
           <li>
-            <img src="../static/images/Vector(1).png" alt="settings" />
+            <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
             <a href="#">Settings</a>
           </li>
         </ul>
         <div class="logout">
-          <img src="../static/images/ic_sharp-log-out.svg" alt="logout" />
+          <img src="{%static 'images/ic_sharp-log-out.svg'%}" alt="logout" />
           <a href="{%url 'logout'%}">Log Out</a>
         </div>
       </div>
@@ -57,37 +57,17 @@
           <div class="welcome-section">
             <p>Welcome!!</p>
             <h3>{{school.schoolname}}.</h3>
-            <div class="filter">
-              <p>filter by</p>
-              <select name="filter" id="filter">
-                <option value="All students">All students</option>
-                <option value="student1">Student1</option>
-                <option value="student2">Student2</option>
-                <option value="student3">Student3</option>
-                <option value="student4">Student4</option>
-              </select>
-            </div>
           </div>
           <!-- SEARCH SECTION (MIDDLE) -->
           <div class="search-section">
-            <img src="../static/images/MagnifyingGlass.png" alt="search icon" />
+            <img src="{%static 'images/MagnifyingGlass.png'%}" alt="search icon" />
             <input type="text" placeholder="Search schools" />
-          </div>
-          <!-- PROFILE SECTION -->
-          <div class="profile-section">
-            <div class="profile-icons">
-              <img src="../static/images/Frame 4.png" alt="message icon" />
-              <img src="../static/images/Frame 5.png" alt="notification icon" />
-              <img src="../static/images/Ellipse 3.png" alt="profile picture" />
-            </div>
-            <a href="#" class="add-student">Add Student</a>
-            <div class="calender">
-              <img src="../static/images/Calendar.png" alt="calender icon" />
-              <p>June, 2022</p>
-            </div>
           </div>
         </div>
         <!-- TABLE SECTION -->
+        <div class="add-student">
+          <a href="#" class="add-student">Add Student</a>
+        </div>
         <table>
           <tr>
             <th>S/N</th>
@@ -109,8 +89,25 @@
             <td class="paid">Paid</td>
             <td>
               <img
-                src="../static/images/material-symbols_edit-calendar-outline.svg"
+                src="{%static 'images/material-symbols_edit-calendar-outline.svg' %}"
                 alt="edit icon" />
+            </td>
+          </tr>
+         
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+            </td>
+          </tr>
+         
+        </table>
+      </div>
+    </div>
+  </body>
+</html> 
             </td>
           </tr>
          

@@ -52,6 +52,21 @@ body{
     
 
 }
+.messages{
+    color:green;
+    font-size: 11px;
+}
+.login{
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: .5px .5px 10px 2px #bababd;
+    font-size: 14px;
+    padding: 10px 0;
+    
+
+}
 .form-cont h3{
     text-align: center;
     margin: 0px;

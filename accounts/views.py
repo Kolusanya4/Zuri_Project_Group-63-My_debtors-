@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-from .models import DebtInfo,School,Debtor
+from .models import Post,School,Debtor
 from django.contrib.auth.models import Group
 from .decorators import allowed_user
 
@@ -60,7 +60,7 @@ def VerifyEmail(request):
         else:
             messages.error(request,'Email does not exist')
             return redirect('verify')
-    return render(request,'verification.html')
+    return render(request,'verification1.html')
 
 
 def Login(request):
@@ -81,7 +81,7 @@ def Login(request):
 def DashBoard(request):
     if request.user.groups.filter(name='Schoolowners').exists():
         school_owner=School.objects.filter(user=request.user)[0]
-        debt_info=DebtInfo.objects.filter(Author=school_owner)
+        debt_info=Post.objects.filter(Author=school_owner)
         
         return render(request,'dashboard.html',{'info':debt_info,'school':school_owner})
     elif request.user.groups.filter(name='Debtors').exists():
@@ -89,23 +89,35 @@ def DashBoard(request):
         return redirect('post')
 
 @login_required(login_url='login')
-def CreatePost(request):    
-        debtpost=DebtInfo.objects.all()
+def ViewPost(request):    
+        debtpost=Post.objects.all().order_by('id')
         check_create=request.user.groups.filter(name='Schoolowners').exists()
-        print('yes')
+        school_owner=School.objects.filter(user=request.user)[0]
+        return render(request,'post.html',{'check':check_create,'debts':debtpost,'school':school_owner})
+
+
+@login_required(login_url='login')
+def CreatePost(request):
+        school_name=School.objects.filter(user=request.user)[0]
         if request.method=='POST':
             form=DebtorInfoForm(data=request.POST)
             if form.is_valid():
                 instance=form.save(commit=False)
-                instance.Author=request.user
+                instance.Author=school_name
                 instance.save()
-                return redirect('dashboard')
+                return redirect('post')
         else:
-            form=DebtorInfoForm()
-            return render(request,'post.html',{'form':form,'check':check_create,'debts':debtpost})
+                 form=DebtorInfoForm()
+                 return render(request,'createpost.html',{'form':form})
+
+@login_required(login_url='login')
+def DeletePost(request,id):
+    post_item=Post.objects.get(id=id)
+    post_item.delete()
+    Post.save()
+    return redirect('post')
 @login_required(login_url='login')
 def Logout(request):
     logout(request)
     messages.success(request,'Logout Successful')
     return redirect('login')
-

@@ -104,10 +104,11 @@ a {
 
 .dashboard-view_top .welcome-section {
   margin-top: 5rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 1.2rem;
   font-weight: 500;
+  gap: 20px; 
 }
 
 .dashboard-view_top .welcome-section p {
@@ -157,12 +158,6 @@ a {
   outline: none;
 }
 
-.dashboard-view_top .profile-section {
-  margin-top: 2.3rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-}
 
 .dashboard-view_top .profile-section img {
   width: 2rem;
@@ -176,13 +171,16 @@ a {
   display: flex;
   gap: 0.8rem;
 }
-
-.dashboard-view_top .profile-section a {
+.add-student{
+  margin-bottom: 20px;
+}
+.add-student a {
+  margin-top: 20px;
   color: white;
   background-color: #1b264f;
   border-radius: 8px;
-  padding: 8px 20px;
-  font-weight: 700;
+  width: 200px;
+  padding: 10px ;  
 }
 
 .dashboard-view_top .profile-section .calender img {

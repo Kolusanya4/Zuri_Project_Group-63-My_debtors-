@@ -1,27 +1,90 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hello {{request.user}}</p>
-    {%if check%}
-    <h2>Create Post</h2>
-    <form action="" method="post">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button type="submit">Create Post</button>
-    </form>
-    {%endif%}
-</body>
-<a href="{% url 'logout'%}">Logout</a>
-<p>These are the availble posts</p>
-{%for debt in debts%}
-{{debt.content}}
-<button>Contend</button>
-<button>Comment</button>
-{%endfor%}
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/posts.css'%}">
+    <script defer src="../static/scripts/dashboard.js"></script>
+    <title>Posts</title>
+  </head>
+  <body>
+    <!-- Open menu button -->
+    <button class="hamburger open" id="hamburger_openMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <!-- Close menu button -->
+    <button class="hamburger close" id="hamburger_closeMenu">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="down"></span>
+    </button>
+    <div class="dashboard-container">
+      <!-- SIDE NAVBAR -->
+      <div class="side-navbar" id="sideNavbar">
+        <div class="logo">
+          <img src="{% static 'images/Frame 9.png'%}" alt="my debtors logo" />
+        </div>
+        <ul class="navlink" id="navlinks">
+          <li class="">
+            <img
+              src="{%static 'images/Vector(2).png'%}"
+              alt="dashboard"
+              class="dashboard-logo" />
+            <a href="{%url 'dashboard'%}">Dashboard</a>
+          </li>
+          <li class="active">
+            <img src="{%static 'images/newspaper-folded.png'%}" alt="feed" />
+            <a href="{%url 'post'%}">Feed</a>
+          </li>
+          <li>
+            <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
+            <a href="#">Settings</a>
+          </li>
+        </ul>
+        <div class="logout">
+          <img src="{%static 'images/ic_sharp-log-out.svg'%}" alt="logout" />
+          <a href="{%url 'logout'%}">Log Out</a>
+        </div>
+      </div>
+      <!-- DASHBOARD VIEW -->
+      <div class="dashboard-view">
+        <div class="dashboard-view_top">
+          <!-- WELCOME SECTION (LEFT) -->
+          <div class="welcome-section">
+            <p>Welcome!!</p>
+            <h3>{{school.schoolname}}.</h3>
+            <div class="post-cont">
+                <div class="add-student add">
+                    <a href="{%url 'create-post'%}" class="add-student">Add Post</a>
+        
+                  </div>
+                  {%for debt in debts%}
+                  <div id="posts">
+
+                    <div class="school"><span><img src="{%static 'images/school.png'%}" alt=""></span> <p>{{debt.Author}}</p></div>
+                    <span>{{debt.content}}</span>
+                    <div class="buttons">
+                        <a href="#"><button>View Comments</button></a>
+                        <a href="#"><button>Contend</button></a>
+                        <a href="#"><button>View Details</button></a>
+                        <a href="#"><button>Delete</button></a>
+                    </div>
+                    <div class="comments">
+                        <form action="post">
+                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Add comment"></textarea>
+                            <button type="submit">Comment</button>
+                        </form>
+                    </div>
+                </div>
+                  {%endfor%}
+              </div>
+            </div>
+          <!-- SEARCH SECTION (MIDDLE) -->
+
+          <!-- PROFILE SECTION -->
+        </div>

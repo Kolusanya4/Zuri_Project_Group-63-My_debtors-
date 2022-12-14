@@ -23,7 +23,9 @@ class Debtor(models.Model):
 
     def __str__(self):
         return self.guardian_name
-class DebtInfo(models.Model):
+
+
+class Post(models.Model):
     status=(
         ('Pending','pending'),
         ('Active','active'),
@@ -34,12 +36,15 @@ class DebtInfo(models.Model):
     debt_amount=models.CharField(max_length=500)
     debt_status=models.CharField(max_length=200, choices=status,default='Active')
     content=models.TextField(blank=True)
-    added_date=models.DateTimeField(auto_now_add=True)
-    updated_date=models.DateTimeField(auto_now=True)
+    created=models.DateField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('created', )
     def __str__(self):
             return str(self.debtor_name)
 class Comment:
     author=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
+    post=models.ForeignKey(Post,null=True,blank=True,on_delete=models.CASCADE)
     content=models.TextField(default='Add comment')
     date_created=models.DateField(auto_now_add=True)
     def __str__(self) -> str:

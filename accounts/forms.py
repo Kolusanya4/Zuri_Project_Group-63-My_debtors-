@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import School,Debtor,DebtInfo
+from .models import School,Debtor,Post
 
 class CreateUserForm(forms.ModelForm):
 
@@ -24,5 +24,5 @@ class DebtorForms(forms.ModelForm):
 
 class DebtorInfoForm(forms.ModelForm):
     class Meta:
-        model=DebtInfo
-        fields='__all__'
+        model=Post
+        fields=('debtor_name','debt_amount','debt_status','content')
