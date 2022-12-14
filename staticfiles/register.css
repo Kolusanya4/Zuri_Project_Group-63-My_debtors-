@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.design-bar{
+    height: 100%;
+    background-color: #274690;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+.design-bar button{
+    background-color: #274690;
+    color:white;
+    width: 60%;
+    padding: 15px;
+    font-weight: 550;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+.design-bar button:hover{
+    background-color: white;
+    color:#274690; 
+}
+.form-bar{
+    background-color: #DDE1ED;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-cont{
+    background-color: white;
+    width: 35%;
+    height: 95%;
+    border-radius: 10px;
+    box-shadow: .5px .5px 10px 2px #bababd;
+    font-size: 14px;
+    padding: 10px 0;
+    
+
+}
+.messages{
+    color:green;
+    font-size: 11px;
+}
+.login{
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: .5px .5px 10px 2px #bababd;
+    font-size: 14px;
+    padding: 10px 0;
+    
+
+}
+.form-cont h3{
+    text-align: center;
+    margin: 0px;
+}
+.form-cont form p{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5px auto;
+}
+.form-cont p{
+    margin: 0;
+}
+.form-cont form p span{
+    display: none;
+}
+select{
+    border: 1px solid rgb(212, 210, 210);
+    padding: 5px 0;
+    border-radius: 3px;
+}
+.form-cont form p input{
+    height: 25px;
+    border: 1px solid rgb(212, 210, 210);
+    border-radius: 3px;
+}
+.form-cont form button{
+    margin: 0 auto;
+    background-color: #274690;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 500;
+    display: block;
+
+}
+#terms-cond{
+    font-size: 12px;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+#terms-cond a{
+    color: #274690;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.hide{
+    display: none;
+}
