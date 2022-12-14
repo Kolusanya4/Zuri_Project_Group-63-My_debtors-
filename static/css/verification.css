@@ -44,3 +44,15 @@ form{
 a{
     text-decoration: none;
 }
+button{
+    width:140px;
+    height: 40px;
+    border-radius: 5px;
+    border:1px solid grey;
+}
+button:hover{
+    background-color: rgba(27, 38, 79, 1);
+   color:white;
+    
+}
+
