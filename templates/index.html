@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <!-- <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/footer.css' %}" />
+    <script defer src="{%static 'scrpts/navbar.js' %}"></script> -->
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <script defer src="../static/scripts/navbar.js"></script>
+    <title>My Debtors</title>
+</head>
+
+<body>
+    <!-- header -->
+    <nav>
+      <div class="logo">
+        <img src="../static/images/Frame 9.png" alt="navbar logo" />
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="buttons" id="btn">
+        <a href="{% url 'register'%}" class="buttons-signup">Sign Up</a>
+        <a href="#login" class="buttons-login">Log In</a>
+      </div>
+      <!-- Open menu button -->
+      <button class="hamburger open" id="hamburger_openMenu">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="down"></span>
+      </button>
+      <!-- Close menu button -->
+      <button class="hamburger close" id="hamburger_closeMenu">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="down"></span>
+      </button>
+    </nav>
+
+    <!-- body -->
+    <div class="container">
+        <div class="first">
+            <div class="first-text">
+                <p class="big-first">
+                    Providing <span class="span-color"> School</span> And
+                    <span class="span-color">Debt</span> Management Solution
+                </p>
+                <p class="small-first">
+                    We provide full access to students records and help schools reach
+                    out to student debtors about their debt, identify and blacklist
+                    those unwillingly to pay.
+                </p>
+                <button class="button-1"><a href="">Get started</a></button>
+            </div>
+            <div class="first-img">
+                <img src="../static/images/first-1.png" alt="first-img" />
+            </div>
+        </div>
+        <div class="rule">
+        </div>
+        <div class="second">
+            <p class="second-p">What we do</p>
+            <div class="second-flex">
+                <div class="second-img">
+                    <img src="../static/images/second-1.png" alt="">
+                </div>
+                <div class="second-text">
+                    <div class="st1">
+                        <div class="st-1">
+                            <div class="st-1-svg">
+                                <svg width="69" height="63" viewBox="0 0 69 63" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M27.6309 62.7856H5.66805C4.26803 62.7856 3.04301 62.3067 1.99299 61.3489C0.942977 60.3912 0.417969 59.2738 0.417969 57.9967V11.545C0.417969 10.268 0.870059 9.15063 1.77424 8.19286C2.67842 7.23509 3.45135 6.75621 4.09303 6.75621H21.7683C22.1767 4.89388 23.1829 3.36412 24.7871 2.16691C26.3913 0.969698 28.2434 0.371094 30.3434 0.371094C32.4435 0.371094 34.2956 0.969698 35.8998 2.16691C37.504 3.36412 38.5102 4.89388 38.9186 6.75621H56.5939C57.9939 6.75621 59.2189 7.23509 60.2689 8.19286C61.3189 9.15063 61.8439 10.268 61.8439 11.545V27.7473H56.5939V11.545H47.3187V21.9209H14.9432V11.545H5.66805V57.9967H27.6309V62.7856ZM44.1687 60.7902L30.1684 48.02L33.931 44.588L44.1687 53.9262L65.0815 34.8507L68.8441 38.2827L44.1687 60.7902ZM31.9185 11.2258C32.9102 11.2258 33.7414 10.9198 34.4123 10.3079C35.0831 9.69602 35.4185 8.93779 35.4185 8.03323C35.4185 7.12867 35.0831 6.37044 34.4123 5.75853C33.7414 5.14663 32.9102 4.84067 31.9185 4.84067C30.9268 4.84067 30.0955 5.14663 29.4247 5.75853C28.7538 6.37044 28.4184 7.12867 28.4184 8.03323C28.4184 8.93779 28.7538 9.69602 29.4247 10.3079C30.0955 10.9198 30.9268 11.2258 31.9185 11.2258Z"
+                                        fill="#3A3A3A" />
+                                </svg>
+                            </div>
+                            <p class="st-1-p-1">
+                                Easy Access to Students Record
+                            </p>
+                            <p class="st-1-p-2">
+                                Get access to a student profile with just one click
+                            </p>
+                        </div>
+
+                        <div class="st-2">
+                            <div class="st-1-svg">
+                                <svg width="69" height="63" viewBox="0 0 69 63" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M60.5333 7.30604V14.241H45.4454V7.30604H60.5333ZM22.8135 7.30604V28.1109H7.7256V7.30604H22.8135ZM60.5333 35.0458V55.8506H45.4454V35.0458H60.5333ZM22.8135 48.9157V55.8506H7.7256V48.9157H22.8135ZM68.0773 0.371094H37.9014V21.1759H68.0773V0.371094ZM30.3575 0.371094H0.181641V35.0458H30.3575V0.371094ZM68.0773 28.1109H37.9014V62.7856H68.0773V28.1109ZM30.3575 41.9808H0.181641V62.7856H30.3575V41.9808Z"
+                                        fill="#3A3A3A" />
+                                </svg>
+                            </div>
+                            <p class="st-1-p-1">
+                                Dashboard Navigation for Schools
+                            </p>
+                            <p class="st-1-p-2">
+                                Tracking pending payments is easier as you have access to view and post on your
+                                dashboard
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="st2">
+                        <div class="st-3">
+                            <div class="st-1-svg">
+                                <svg width="69" height="63" viewBox="0 0 69 63" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M34.631 20.2303C27.7573 20.2303 22.1899 25.3085 22.1899 31.5783C22.1899 37.8482 27.7573 42.9264 34.631 42.9264C41.5047 42.9264 47.0721 37.8482 47.0721 31.5783C47.0721 25.3085 41.5047 20.2303 34.631 20.2303ZM62.4369 28.7413C61.0062 16.9109 50.7111 7.52039 37.7413 6.21536V0.371094H31.5207V6.21536C18.5509 7.52039 8.25587 16.9109 6.82514 28.7413H0.417969V34.4154H6.82514C8.25587 46.2457 18.5509 55.6363 31.5207 56.9413V62.7856H37.7413V56.9413C50.7111 55.6363 61.0062 46.2457 62.4369 34.4154H68.8441V28.7413H62.4369ZM34.631 51.4375C22.5942 51.4375 12.8591 42.5576 12.8591 31.5783C12.8591 20.5991 22.5942 11.7192 34.631 11.7192C46.6678 11.7192 56.403 20.5991 56.403 31.5783C56.403 42.5576 46.6678 51.4375 34.631 51.4375Z"
+                                        fill="#3A3A3A" />
+                                </svg>
+
+                            </div>
+                            <p class="st-1-p-1">
+                                Track students with pending payments
+                            </p>
+                            <p class="st-1-p-2">
+                                Post a student record to track down your pending payments
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule">
+        </div>
+        <div class="third">
+            <div class="third-text">
+                <p class="third-head">
+                    How it works
+                </p>
+                <div class="third-list">
+                    <div class="list-logo">
+                        <p>
+                            1
+                        </p>
+                    </div>
+                    <div class="list-text">
+                        Login/Register to have access to database
+                    </div>
+                </div>
+                <div class="third-list">
+                    <div class="list-logo">
+                        <p>
+                            2
+                        </p>
+                    </div>
+                    <div class="list-text">
+                        Post new data about a debtor or view a debtor
+                    </div>
+                </div>
+                <div class="third-list">
+                    <div class="list-logo">
+                        <p>
+                            3
+                        </p>
+                    </div>
+                    <div class="list-text">
+                        Send debtors a debt notification email which can be contended by the debtors
+                    </div>
+                </div>
+                <div class="third-list">
+                    <div class="list-logo">
+                        <p>
+                            4
+                        </p>
+                    </div>
+                    <div class="list-text">
+                        Comment on posts by registered schools
+                    </div>
+                </div>
+            </div>
+            <div class="third-img">
+                <img src="../static/images/third-1.png" alt="">
+            </div>
+        </div>
+        <div class="rule">
+        </div>
+        <div class="fourth">
+            <h2>
+                Our Achievements
+            </h2>
+            <p class="fourth-svg">
+                <svg width="1000" height="117" viewBox="0 0 1000 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="1000" height="103" transform="translate(0 14)" fill="white" />
+                    <rect width="1000" height="15" transform="translate(0 87)" fill="#274690" />
+                    <rect width="15" height="102" transform="translate(493)" fill="#274690" />
+                </svg>
+
+            </p>
+            <div class="fourth-flex">
+                <div class="ff-1">
+                    <div class="ff-img">
+                        <img src="../static/images/ff-1.png" alt="">
+                    </div>
+                    <p class="ff-p">
+                        Helped  3000 schools recover old debts
+                    </p>
+                </div>
+                <div class="ff-2">
+                    <div class="ff-img">
+                        <img src="../static/images/ff-2.png" alt="">
+                    </div>
+                    <p class="ff-p">
+                        Build better relationship between parents and the school they owe
+                    </p>
+                </div>
+                <div class="ff-3">
+                    <div class="ff-img">
+                        <img src="../static/images/ff-3.png" alt="">
+                    </div>
+                    <p class="ff-p">
+                        Get 7000 students debt free
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="rule">
+        </div>
+        <div class="fifth">
+            <div class="fifth-f-img">
+                <img src="../static/images/fifth-1.png" alt="">
+            </div>
+            <div class="fifth-f-text">
+                <p>
+                    Need more information about your student?
+                </p>
+                <div class="fifth-input">
+                    <input type="text" placeholder="Abc@gmail.com">
+                    <button class="button-5"><a href="">Get started</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <div class="footer-logo_nav">
+        <div class="footer-logo">
+          <img src="{% static 'images/Group 5.png'%}" alt="Logo footer" />
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-nav_navlinks">
+            <h3>Navigation</h3>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Profile</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-nav_navlinks">
+            <h3>About Us</h3>
+            <a href="#">Our Story</a>
+            <a href="#">Designers</a>
+            <a href="#">Press</a>
+            <a href="#">Sustainability</a>
+          </div>
+          <div class="footer-nav_navlinks">
+            <h3>Support</h3>
+            <a href="#">FAQs</a>
+            <a href="#">Care guide</a>
+            <a href="#">Info</a>
+            <a href="#">Documentation</a>
+          </div>
+          <div class="footer-nav_navlinks">
+            <h3>Contact Us</h3>
+            <p>+12-234-386</p>
+            <p>+23-567-386</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-footer">
+      <p class="footer-copyright">&copy; 2022 All Rights Reserved</p>
+      <div class="privacy_terms_discl">
+        <a href="#">Privacy</a>
+        <a href="#" class="terms">Terms and Conditions</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+</body>
+
+</html>
