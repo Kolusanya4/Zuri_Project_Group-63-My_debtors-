@@ -61,8 +61,9 @@
             <h3>{{debtor.full_name}}</h3>
             <div class="post-cont">
                 <div class="add-student add">
-                    <a href="{%url 'create-post'%}" class="add-student">Add Post</a>
-        
+                   {%if check%} <a href="{%url 'create-post'%}" class="add-student">Add Post</a>{%endif%}
+                    {%if not debt%}
+                    <p>No Posts Available</p>{%endif%}
                   </div>
                   {%for debt in debts%}
                   <div id="posts">
