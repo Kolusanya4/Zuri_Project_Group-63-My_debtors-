@@ -72,7 +72,7 @@ Click to view [data schema] (https://docs.google.com/document/d/10xd0uvImfHDSHPQ
 
 Click to view [mood boards] (https://www.figma.com/file/dEpZ8o8xm6Gb60WFO8sQTy/My-Debtors-Project-(Team-Dovepp)-Team-63?node-id=35%3A2918&t=cM1UyR6pTv7FnhiY-1).
 
-Click to view [Hosting link] (https://https://web-production-a8c0.up.railway.app/).
+Click to view [Hosting link] (https://https://https://team-dovepp-mydebtors.up.railway.app/).
 
 
  
