@@ -8,7 +8,7 @@ hamburgerCloseMenu.addEventListener('click', hide)
 
 function show() {
   navLinks.style.display = 'flex'
-  navLinks.style.top = '3.7rem'
+  navLinks.style.top = '3rem'
   btn.style.display = 'block'
   btn.style.top = '60%'
   hamburgerCloseMenu.style.display = 'block'

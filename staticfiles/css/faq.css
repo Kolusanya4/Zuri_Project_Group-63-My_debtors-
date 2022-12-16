@@ -36,7 +36,11 @@ button{
     height: 20px;
     margin-top: 30px;
     border-radius: 5px;
-    border:1px solid grey;
+    height: 30px;
+    width: 120px;
+    border:none;
+    color: white;
+    background-color: rgba(39, 70, 144, 1);
 }
 button:hover{
     border-radius: 5px;

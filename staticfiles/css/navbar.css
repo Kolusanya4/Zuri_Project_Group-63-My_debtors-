@@ -46,7 +46,8 @@ nav ul li a:hover {
 
 nav .buttons {
   display: flex;
-  gap: 10px;
+  gap: 10px; 
+   
 }
 
 nav .buttons a {
@@ -77,12 +78,16 @@ nav .hamburger {
 @media screen and (max-width: 820px) {
   nav {
     padding: 0 1.2rem;
+    
   }
 
   nav .logo {
     width: 9rem;
   }
-
+  #navLinks{
+    z-index: 1;
+    position: fixed;
+  }
   nav ul,
   nav .buttons {
     display: none;
@@ -166,5 +171,6 @@ nav .hamburger {
     /* transform: translateY(-50%); */
     transition: all 0.3s ease-in-out;
     text-align: center;
+    z-index: 1;
   }
 }
