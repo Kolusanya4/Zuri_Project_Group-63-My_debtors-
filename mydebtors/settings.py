@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'mydebtors.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'RgTp23cvwian1dUB2nUv',
+        'HOST':'containers-us-west-142.railway.app',
+        'PORT':'6641'
     }
 }
 
