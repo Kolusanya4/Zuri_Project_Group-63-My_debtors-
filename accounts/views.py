@@ -186,9 +186,10 @@ def ContendList(request):
 
     check_create=request.user.groups.filter(name='Schoolowners').exists()
     school_instance=School.objects.filter(user=request.user)
-    
+    contends_made=None
     post_contented=Post.objects.filter(Author=school_instance[0])
-    contends_made=Contend.objects.filter(post=post_contented[0])
+    if post_contented:
+        contends_made=Contend.objects.filter(post=post_contented[0])
     debtor=None
     if contends_made:
         debtor=Debtor.objects.filter(user=contends_made[0].author)[0].guardian_name
