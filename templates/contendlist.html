@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
     <link rel="stylesheet" href="{% static 'css/posts.css'%}">
     <script defer src="../static/scripts/dashboard.js"></script>
-    <title>Posts</title>
+    <title>Contends List</title>
   </head>
   <body>
     <!-- Open menu button -->
@@ -37,11 +37,11 @@
               class="dashboard-logo" />
             <a href="{%url 'dashboard'%}">Dashboard</a>
           </li>{%endif%}
-          <li class="active">
+          <li >
             <img src="{%static 'images/newspaper-folded.png'%}" alt="feed" />
             <a href="{%url 'post'%}">Feed</a>
           </li>
-          <li>
+          <li class="active">
             <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
             <a href="{%url 'listcontend'%}">Contends</a>
           </li>
@@ -57,38 +57,25 @@
           <!-- WELCOME SECTION (LEFT) -->
           <div class="welcome-section">
             <p>Welcome!!</p>
-           {%if school%} <h3>{{school.schoolname}}</h3>{%endif%}
-            <h3>{{debtor.full_name}}</h3>
-            <div class="post-cont">
-                <div class="add-student add">
-                    <a href="{%url 'create-post'%}" class="add-student">Add Post</a>
-        
-                  </div>
-                  {%for debt in debts%}
-                  <div id="posts">
+            <h3>{{school.schoolname}}</h3>
 
-                    <div class="school"><span><img src="{%static 'images/school.png'%}" alt=""></span> <p>{{debt.Author}}</p></div>
-                    <span>{{debt.content}}</span>
-                    <div class="buttons">
-                      <a href="{%url 'viewcom' debt.id%}"><button>View Comments</button></a>
-                        {%if not check%}<a href="{%url 'contend' debt.id %}"><button>Contend</button></a>{%endif%}
-                        <!-- <a href="#"><button>View Details</button></a> -->
-                        <a href="{% url 'delete' debt.id%}"><button>Delete</button></a>
-                    </div>
-                    <div class="comments">
-                        <form action="{%url 'comment' debt.id%}" method="POST">
-                            {%csrf_token%}
-                            <textarea name="comment" id="" cols="30" rows="10" placeholder="Add comment"></textarea>
-                            <button type="submit">Comment</button>
-                        </form>
-                    </div>
-                </div>
-                  {%endfor%}
-              </div>
-          </div>
         </div>
+        
       </div>
       </div>
+      <div class="contends-cont">
+        <h2>Contends Made By Students</h2>
+        {%if not contends%}<p>No contends made</p>{%endif%}
+        {%if contends%}
+        {%for contend in contends%}
+        <div class="contends">
+            <h3>Contend Title: {{contend.title}}</h3>
+            <p>Guardian Name : {{debtor}}</p>
+            <p>{{contend.content}}</p>
+        </div>
+        {%endfor%}
+        {%endif%}
+    </div>
       <script defer src="{%static 'scripts/dashboard.js'%}"></script>
-        </body
+    </body>
   </html>

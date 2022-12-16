@@ -20,10 +20,10 @@
         <img src="../static/images/Frame 9.png" alt="navbar logo" />
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#">Home</a></li>
+        <li><a href="">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="{%url 'app:faq'%}">FAQs</a></li>
+        <li><a href="{%url 'app:contact'%}">Contact Us</a></li>
       </ul>
       <div class="buttons" id="btn">
         <a href="{% url 'register'%}" class="buttons-signup">Sign Up</a>

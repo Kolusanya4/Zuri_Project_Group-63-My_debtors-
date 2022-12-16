@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# CSRF_TRUSTED_ORIGINS=['https://subdomain.example.com']
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 

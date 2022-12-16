@@ -10,6 +10,7 @@ function show() {
   sideNavbar.style.left = '0'
   hamburgerCloseMenu.style.display = 'block'
   hamburgerOpenMenu.style.display = 'none'
+
 }
 
 function hide() {

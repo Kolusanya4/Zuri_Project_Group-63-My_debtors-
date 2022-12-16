@@ -1,16 +1,20 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse
-from .forms import CreateUserForm,SchoolForms,DebtorForms,DebtorInfoForm
+from .forms import CreateUserForm,SchoolForms,DebtorForms,DebtorInfoForm,ContendForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-from .models import Post,School,Debtor,Comment
+from .models import Post,School,Debtor,Comment,Contend
 from django.contrib.auth.models import Group
 from .decorators import allowed_user
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+@csrf_exempt
 def Register(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
     if request.method=='POST':
         form=CreateUserForm(data=request.POST)
         profile=SchoolForms(data=request.POST)
@@ -41,7 +45,7 @@ def Register(request):
     profile=SchoolForms()
     debtor=DebtorForms()
     return render(request,'register.html',{'form':form,'schoolform':profile,'debtorform':debtor})
-
+@csrf_exempt
 def VerifyEmail(request):
     if request.method=='POST':
         email_address=request.POST.get('email')
@@ -62,7 +66,7 @@ def VerifyEmail(request):
             return redirect('verify')
     return render(request,'verification1.html')
 
-
+@csrf_exempt
 def Login(request):
 
     
@@ -79,7 +83,7 @@ def Login(request):
         else:
             messages.error(request,'Wrong login credentials')
     return render(request,'login.html')
-
+@csrf_exempt
 @login_required(login_url='login')
 def DashBoard(request):
     if request.user.groups.filter(name='Schoolowners').exists():
@@ -90,7 +94,7 @@ def DashBoard(request):
     elif request.user.groups.filter(name='Debtors').exists():
         debtor=Debtor.objects.filter(user=request.user)
         return redirect('post')
-
+@csrf_exempt
 @login_required(login_url='login')
 def ViewPost(request):    
         debtpost=Post.objects.all().order_by('created')
@@ -103,7 +107,7 @@ def ViewPost(request):
            return render(request,'post.html',{'check':check_create,'debts':debtpost,'debtor':debtor})
 
 
-
+@csrf_exempt
 @login_required(login_url='login')
 def CreatePost(request):
         school_name=School.objects.filter(user=request.user)[0]
@@ -118,17 +122,21 @@ def CreatePost(request):
                  form=DebtorInfoForm()
                  return render(request,'createpost.html',{'form':form})
 
+@csrf_exempt
 @login_required(login_url='login')
 def DeletePost(request,id):
     post_item=Post.objects.get(id=id)
     post_item.delete()
     return redirect('dashboard')
+
+@csrf_exempt
 @login_required(login_url='login')
 def Logout(request):
     logout(request)
     messages.success(request,'Logout Successful')
     return redirect('login')
 
+@csrf_exempt
 @login_required(login_url='login')
 def CreateComment(request,id):
     post_instance=Post.objects.get(id=id)
@@ -142,6 +150,7 @@ def CreateComment(request,id):
         return redirect('post')
     return redirect('post')
 
+@csrf_exempt
 @login_required(login_url='login')
 def ViewComments(request,id):
         post_instance=Post.objects.get(id=id)
@@ -155,3 +164,35 @@ def ViewComments(request,id):
         elif request.user.groups.filter(name='Debtors').exists():
            debtor=Debtor.objects.filter(user=request.user)[0]
            return render(request,'comments.html',{'check':check_create,'debts':debtpost,'debtor':debtor,'comments':comments,})
+
+@csrf_exempt
+@login_required(login_url='login')
+def CreateContend(request,id):
+    post_instance=Post.objects.get(id=id)
+    if request.method=='POST':
+        form=ContendForm(data=request.POST)
+        if form.is_valid:
+            contend=form.save(commit=False)
+            contend.post=post_instance
+            contend.author=request.user
+            contend.save()
+            return redirect('post')
+    form=ContendForm()
+    return render(request,'createcontend.html',{'form':form})
+
+@csrf_exempt
+@login_required(login_url='login')
+def ContendList(request):
+
+    check_create=request.user.groups.filter(name='Schoolowners').exists()
+    school_instance=School.objects.filter(user=request.user)
+    
+    post_contented=Post.objects.filter(Author=school_instance[0])
+    contends_made=Contend.objects.filter(post=post_contented[0])
+    debtor=None
+    if contends_made:
+        debtor=Debtor.objects.filter(user=contends_made[0].author)[0].guardian_name
+    
+    return render(request,'contendlist.html',{'contends':contends_made,'check':check_create,'school':school_instance[0],'debtor':debtor})
+
+

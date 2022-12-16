@@ -109,8 +109,50 @@
     border-radius: 5px;
 
 }
+.contends-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 200px;
+    left: 350px;
+}
+.contends{
+    padding: 10px;
+    width: 60vw;
+    box-shadow: 0 1px 2px rgb(212, 209, 209);
+    border-radius: 10px;
+
+}
 .comment h4{
     color: #274690;
 }
 
-
+@media screen and (max-width:450px) {
+    .post-cont{
+        width: 90vw;
+    }
+    .school{
+        width: 80%;
+    }
+    .buttons a button{
+        font-size: 10px;
+        align-self: center;
+    }
+    .buttons{
+        align-self: center;
+    }
+    #comment-modal .comment-cont{
+        width: 80%;
+    }
+    .contends-cont{
+        top: 90px;
+        left: 50px;
+    }
+    .contends-cont h2{
+        font-size: 15px;
+    }
+    .contends{
+        width: 80vw;
+    }
+}

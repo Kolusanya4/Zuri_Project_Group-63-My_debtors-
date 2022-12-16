@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import School,Debtor,Post
+from .models import School,Debtor,Post,Contend
 
 class CreateUserForm(forms.ModelForm):
 
@@ -26,3 +26,8 @@ class DebtorInfoForm(forms.ModelForm):
     class Meta:
         model=Post
         fields=('debtor_name','debt_amount','amount_paid','debt_status','content')
+
+class ContendForm(forms.ModelForm):
+    class Meta:
+        model=Contend
+        fields=('title','content')

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/register.css'%}" />
-    <title>Create Post</title>
+    <title>Contend</title>
   </head>
   <body>
     <div class="container">
@@ -16,7 +16,7 @@
       <div class="form-bar">
         <div class="form-cont">
             <p style="text-align: center;"><img src="{% static 'images/Frame 9.png'%}" alt="" height="50px"></p>
-            <h3>Create Post For Feeds</h3>
+            <h3>Contend Your Debt Info</h3>
           {% if messages %} {% for message in messages %}
           <p
             {%
@@ -34,7 +34,7 @@
           <div class="form-container">
             <form action="" method="POST" class="form school-form">
               {%csrf_token%}  {{form.as_p}}
-              <button type="submit">Create Debt Data</button>
+              <button type="submit">Post Contend</button>
               <p id="terms-cond">Retun Home? <a href="{%url 'dashboard'%}" >Dashboard</a></p>
 
           </div>

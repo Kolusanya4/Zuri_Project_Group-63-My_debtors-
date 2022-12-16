@@ -1,7 +1,16 @@
-.messages{
-    color: rgb(2, 177, 2);
-    padding: 10px 20px;
-    background-color: rgb(243, 209, 209);
-    border-radius: 5px;
-    width: 20%;
+.form-cont{
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: .5px .5px 10px 2px #bababd;
+    font-size: 14px;
+    padding: 10px 0;
+}
+@media screen and (max-width:450px) {
+    .form-cont{
+        width: 80%;
+        height: 40%;
+        margin-top: 20px;
+    }
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
-    <script defer src="../static/scripts/dashboard.js"></script>
+   
     <title>Dashboard</title>
   </head>
   <body>
@@ -42,7 +42,7 @@
           </li>
           <li>
             <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
-            <a href="#">Settings</a>
+            <a href="{%url 'listcontend'%}">Contends</a>
           </li>
         </ul>
         <div class="logout">
@@ -105,13 +105,6 @@
         </table>
       </div>
     </div>
+    <script defer src="{%static 'scripts/dashboard.js'%}"></script>
   </body>
 </html> 
-            </td>
-          </tr>
-         
-        </table>
-      </div>
-    </div>
-  </body>
-</html>

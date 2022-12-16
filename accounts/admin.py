@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School,Debtor,Post,Comment
+from .models import School,Debtor,Post,Comment,Contend
 # Register your models here.
 
 admin.site.register(School)
@@ -11,3 +11,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post,PostAdmin)
 admin.site.register(Comment)
+admin.site.register(Contend)

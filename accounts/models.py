@@ -50,3 +50,12 @@ class Comment(models.Model):
     date_created=models.DateField(auto_now_add=True)
     def __str__(self) -> str:
          return str(self.author)
+
+class Contend(models.Model):
+    author=models.ForeignKey(User,null=True,on_delete=models.CASCADE)
+    post=models.ForeignKey(Post,null=True,blank=True,on_delete=models.CASCADE)
+    title=models.CharField(max_length=500)
+    content=models.TextField(default='Add comment')
+    date_created=models.DateField(auto_now_add=True)
+    def __str__(self) -> str:
+         return str(self.author)

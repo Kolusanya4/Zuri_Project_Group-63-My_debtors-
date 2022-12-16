@@ -1,27 +1,28 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
-    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="{%static 'css/faq.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="logo-wrapper">
-            <img src="/debtors-images/Logo_object_frame.png" alt="logo" class="logo">
-            <img src="/debtors-images/My Debtors.png" alt="debtors" class="debtors-img" >
+            <img src="{%static 'images/Logo_object_frame.png'%}" alt="logo" class="logo">
+            <img src="{%static 'images/My Debtors.png'%}" alt="debtors" class="debtors-img" >
 
         </div>        
-        <div class="home"><a href="#">Home</a></div>
+        <div class="home"><a href="{%url 'app:home'%}">Home</a></div>
         <div class="about"><a href="#">About Us</a></div>
         <div class="faq"><a href ="#" target="_blank" >FAQ</a></div>
-        <div class="contact"><a href="#">Contact Us</a></div>
-        <button>Sign Up</button>
-        <button>Log in</button>
+        <div class="contact"><a href="{%url 'app:contact'%}">Contact Us</a></div>
+        <a href="{%url 'register'%}"><button>Sign Up</button></a>
+        <a href="{%url 'login'%}"><button>Login</button></a>
 
     </nav><hr>
     <section>
@@ -29,19 +30,19 @@
     <h2>Look here</h2>
     <div>
         <input type="text" placeholder="Type your question here">
-        <img src="/debtors-images/Vector.png" alt="vector" class="vector">
+        <img src="{%static 'images/Vector.png'%}" alt="vector" class="vector">
     </div>
     </section>
 
     <footer>
         <div class="logo-wrapper1">
-            <img src="/debtors-images/Ellipse 1.png" alt="logo" class="logo-footer1" width="40px">
+            <img src="{%static 'images/Ellipse 1.png'%}" alt="logo" class="logo-footer1" width="40px">
         </div>
         <div class="logo-wrapper2">
-            <img src="/debtors-images/Ellipse 2.png" alt="logo" class="logo-footer2" width="30px">
+            <img src="{%static 'images/Ellipse 2.png'%}" alt="logo" class="logo-footer2" width="30px">
         </div>
         <div class="debtor1-wrapper">
-            <img src="/debtors-images/My Debtors1.png" alt="debtors" class="debtor-img" >
+            <img src="{%static 'images/My Debtors1.png'%}" alt="debtors" class="debtor-img" >
         </div>
         <div class="navigation">
             <h3>Navigation</h3>
@@ -76,10 +77,10 @@
         </div>
     
         <div>
-            <p>Privacy <img src="debtors-images/Line 14.png" height="25px" class="vertial-line"></p>
+            <p>Privacy <img src="{%static 'images/Line 14.png'%}" height="25px" class="vertial-line"></p>
         </div>
          <div class="terms">
-            <p>Terms and Conditions <img src="debtors-images/Line 14.png" height="25px" class="vertial-line"></p>
+            <p>Terms and Conditions <img src="{%static 'images/Line 14.png'%}" height="25px" class="vertial-line"></p>
         </div>
         <div class="disclaimer">
             <p>Disclaimer</p>
