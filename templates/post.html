@@ -41,10 +41,10 @@
             <img src="{%static 'images/newspaper-folded.png'%}" alt="feed" />
             <a href="{%url 'post'%}">Feed</a>
           </li>
-          <li>
+         {%if check%} <li>
             <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
-           {%if check%} <a href="{%url 'listcontend'%}">Contends</a>{%endif%}
-          </li>
+            <a href="{%url 'listcontend'%}">Contends</a>
+          </li>{%endif%}
         </ul>
         <div class="logout">
           <img src="{%static 'images/ic_sharp-log-out.svg'%}" alt="logout" />
