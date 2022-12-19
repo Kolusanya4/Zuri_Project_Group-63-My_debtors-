@@ -101,10 +101,11 @@ def ViewPost(request):
         check_create=request.user.groups.filter(name='Schoolowners').exists()
         if check_create:
             school_owner=School.objects.filter(user=request.user)[0]
-            return render(request,'post.html',{'check':check_create,'debts':debtpost,'school':school_owner})
+            author_instance=Post.objects.filter(Author=school_owner).exists()
+            return render(request,'post.html',{'check':check_create,'debts':debtpost,'school':school_owner,'delete':author_instance})
         elif request.user.groups.filter(name='Debtors').exists():
            debtor=Debtor.objects.filter(user=request.user)[0]
-           return render(request,'post.html',{'check':check_create,'debts':debtpost,'debtor':debtor})
+           return render(request,'post.html',{'check':check_create,'debts':debtpost,'debtor':debtor,'delete':False})
 
 
 @csrf_exempt
@@ -183,7 +184,6 @@ def CreateContend(request,id):
 @csrf_exempt
 @login_required(login_url='login')
 def ContendList(request):
-
     check_create=request.user.groups.filter(name='Schoolowners').exists()
     school_instance=School.objects.filter(user=request.user)
     contends_made=None

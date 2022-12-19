@@ -41,7 +41,7 @@
             <a href="{%url 'post'%}">Feed</a>
           </li>
           <li>
-            <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
+            <img src="{%static 'images/content.png'%}" alt="settings" />
             <a href="{%url 'listcontend'%}">Contends</a>
           </li>
         </ul>
@@ -78,7 +78,7 @@
             <th>DELETE</th>
           </tr>
           {%for info in infos%}
-          <td>1.</td>
+          <td class="sn">1.</td>
           <td>{{info.debtor_name}}</td>
           <td>{{info.debt_amount}}</td>
           <td>{{info.amount_paid}}</td>

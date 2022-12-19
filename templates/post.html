@@ -42,7 +42,7 @@
             <a href="{%url 'post'%}">Feed</a>
           </li>
          {%if check%} <li>
-            <img src="{%static 'images/Vector(1).png'%}" alt="settings" />
+            <img src="{%static 'images/content.png'%}" alt="settings" />
             <a href="{%url 'listcontend'%}">Contends</a>
           </li>{%endif%}
         </ul>
@@ -62,7 +62,7 @@
             <div class="post-cont">
                 <div class="add-student add">
                    {%if check%} <a href="{%url 'create-post'%}" class="add-student">Add Post</a>{%endif%}
-                    {%if not debt%}
+                    {%if not debts%}
                     <p>No Posts Available</p>{%endif%}
                   </div>
                   {%for debt in debts%}
@@ -74,7 +74,7 @@
                       <a href="{%url 'viewcom' debt.id%}"><button>View Comments</button></a>
                         {%if not check%}<a href="{%url 'contend' debt.id %}"><button>Contend</button></a>{%endif%}
                         <!-- <a href="#"><button>View Details</button></a> -->
-                        <a href="{% url 'delete' debt.id%}"><button>Delete</button></a>
+                       {%if delete%} <a href="{% url 'delete' debt.id%}"><button>Delete</button></a>{%endif%}
                     </div>
                     <div class="comments">
                         <form action="{%url 'comment' debt.id%}" method="POST">
